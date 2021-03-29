@@ -20,5 +20,3 @@ script:
  #  - phpunit  --coverage-text --coverage-clover=coverage.xml ./Tests/
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-env:
-  - CODECOV_TOKEN='ea47b997-29ed-4100-b50d-fc4014e03b7f'
