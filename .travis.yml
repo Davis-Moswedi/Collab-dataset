@@ -1,0 +1,21 @@
+branches:
+  only:
+    - master
+sudo: required
+language: python
+python:
+  - "2.7"
+  - "3.8"
+
+services:
+ # - mysql
+  
+before_script:
+  #- mysql -e "create database IF NOT EXISTS d1965919;"
+  #- mysql -u root --password="" < Tests/project_dump.sql
+  
+script:
+ #- phpunit --configuration phpunit.xml --testsuite PHPTests --coverage-text --coverage-clover=coverage.xml
+ #  - phpunit  --coverage-text --coverage-clover=coverage.xml ./Tests/
+after_success:
+ # - bash <(curl -s https://codecov.io/bash)
