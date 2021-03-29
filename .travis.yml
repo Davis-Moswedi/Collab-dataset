@@ -6,6 +6,15 @@ language: python
 python:
   - "2.7"
   - "3.8"
+  # PyPy versions
+  - "pypy"   # currently Python 2.7.13, PyPy 7.1.1
+  - "pypy3"  # currently Python 3.6.1,  PyPy 7.1.1-beta0
+# command to install dependencies
+install:
+  - pip install -r requirements.txt
+  - pip install .
+# command to run tests
+script: pytest
 
 services:
  # - mysql
@@ -14,6 +23,7 @@ before_script:
   #- mysql -e "create database IF NOT EXISTS d1965919;"
   #- mysql -u root --password="" < Tests/project_dump.sql
   
+#command to run tests
 script:
   - pytest
  #- phpunit --configuration phpunit.xml --testsuite PHPTests --coverage-text --coverage-clover=coverage.xml
